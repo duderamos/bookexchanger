@@ -1,0 +1,75 @@
+require: rubocop-rspec
+
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/config.ru'
+  Exclude:
+    - 'db/schema.rb'
+    - 'vendor/**/*'
+
+  RunRailsCops:    true
+  DisplayCopNames: true
+
+RSpec/DescribeClass:
+  Exclude:
+    - 'spec/i18n_spec.rb'
+
+Lint/HandleExceptions:
+  Exclude:
+    - 'bin/*'
+
+Metrics/AbcSize:
+  Max: 25
+  Exclude:
+    - 'app/services/default_categories_creator.rb'
+
+Metrics/MethodLength:
+  Exclude:
+    - 'db/migrate/*'
+  Max: 20
+
+Style/SymbolProc:
+  Exclude:
+    - 'spec/support/factories.rb'
+
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+Style/CaseIndentation:
+  IndentOneStep: true
+
+Style/Documentation:
+  Enabled: false
+
+Style/AlignParameters:
+  Enabled: false
+
+Style/BlockEndNewline:
+  Enabled: false
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IndentHash:
+  Enabled: false
+
+Style/SingleSpaceBeforeFirstArg:
+  Enabled: false
+
+Style/PredicateName:
+  Exclude:
+    - 'app/controllers/application_controller.rb'
+
+Metrics/LineLength:
+  Max: 100
+
+Style/SpaceAroundOperators:
+  MultiSpaceAllowedForOperators:
+    - '='
+    - '=>'
+    - '||'
+    - '||='
+
+Style/MultilineOperationIndentation:
+  EnforcedStyle: indented

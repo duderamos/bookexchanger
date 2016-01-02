@@ -1,0 +1,23 @@
+language: ruby
+sudo: false
+rvm: 2.0.0
+
+cache:
+  bundler: true
+
+bundler_args: --without production,staging
+
+addons:
+  postgresql: 9.2
+
+env:
+  global:
+    - SECRET_KEY_BASE=6aeca177547328a8e085615cab008b6113f0916df4228c8b840a12f1ab6d165011761de867ce1f7aa2d23179f77feced2c4eca2cd506357559908ae7ceb2ea1e
+
+before_script:
+  - cp config/database.travis.yml config/database.yml
+  - psql -c 'create database bookexchanger_test;' -U postgres
+  - RAILS_ENV=test bundle exec rake db:reset
+
+script:
+  - bundle exec rubocop && bundle exec haml-lint app/views && bundle exec rails_best_practices && bundle exec rspec
