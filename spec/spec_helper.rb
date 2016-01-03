@@ -22,7 +22,7 @@ RSpec.configure do |config|
     mocks.verify_partial_doubles = true
   end
 
-  config.use_transactional_fixrures = true
+  config.use_transactional_fixtures = true
   config.filter_run :focus
   config.run_all_when_everything_filtered = true
   config.disable_monkey_patching!
@@ -32,7 +32,7 @@ RSpec.configure do |config|
   config.include AbstractController::Translation
   config.include FactoryGirl::Syntax::Methods
 
-  Kernel.srang config.seed
+  Kernel.srand config.seed
 
   config.before(:suite) do
     begin
