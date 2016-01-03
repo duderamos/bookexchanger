@@ -1,0 +1,10 @@
+linters:
+  LineLength:
+    enabled: true
+    max: 100
+
+  ConsecutiveComments:
+    enabled: false
+
+  RubyComments:
+    enabled: false
