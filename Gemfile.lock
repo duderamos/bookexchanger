@@ -77,6 +77,8 @@ GEM
       warden (~> 1.2.3)
     diff-lcs (1.2.5)
     docile (1.1.5)
+    enumerate_it (1.2.8)
+      activesupport (>= 3.0.0)
     erubis (2.7.0)
     execjs (2.6.0)
     factory_girl (4.5.0)
@@ -257,6 +259,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   database_cleaner
   devise
+  enumerate_it
   factory_girl_rails
   faker
   haml-lint
